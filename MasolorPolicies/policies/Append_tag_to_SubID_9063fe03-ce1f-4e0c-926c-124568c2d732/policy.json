@@ -1,0 +1,55 @@
+{
+ "properties": {
+  "displayName": "Append tag to SubID",
+  "policyType": "Custom",
+  "mode": "Indexed",
+  "metadata": {
+   "createdBy": "c64e788f-c7dc-40a5-8054-5e88380d4dad",
+   "createdOn": "2021-07-07T20:16:41.3576753Z",
+   "updatedBy": "c64e788f-c7dc-40a5-8054-5e88380d4dad",
+   "updatedOn": "2021-07-07T21:52:44.7484708Z"
+  },
+  "parameters": {
+   "tagName": {
+    "type": "String",
+    "metadata": {
+     "displayName": "Tag Name",
+     "description": "Name of the tag, such as 'expiration'"
+    }
+   },
+   "tagValue": {
+    "type": "String",
+    "metadata": {
+     "displayName": "Tag Value",
+     "description": "Value of the tag, such as '01/01/22'"
+    }
+   }
+  },
+  "policyRule": {
+   "if": {
+    "allOf": [
+     {
+      "field": "type",
+      "equals": "Microsoft.Resources/subscriptions"
+     },
+     {
+      "field": "[concat('tags[', parameters('tagName'), ']')]",
+      "exists": "false"
+     }
+    ]
+   },
+   "then": {
+    "effect": "append",
+    "details": [
+     {
+      "field": "[concat('tags[', parameters('tagName'), ']')]",
+      "value": "[parameters('tagValue')]"
+     }
+    ]
+   }
+  }
+ },
+ "id": "/providers/Microsoft.Management/managementGroups/MasolorMG/providers/Microsoft.Authorization/policyDefinitions/9063fe03-ce1f-4e0c-926c-124568c2d732",
+ "type": "Microsoft.Authorization/policyDefinitions",
+ "name": "9063fe03-ce1f-4e0c-926c-124568c2d732"
+}

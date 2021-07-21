@@ -1,0 +1,32 @@
+{
+ "sku": {
+  "name": "A0",
+  "tier": "Free"
+ },
+ "properties": {
+  "displayName": "Append tag to SubID",
+  "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/MasolorMG/providers/Microsoft.Authorization/policyDefinitions/9063fe03-ce1f-4e0c-926c-124568c2d732",
+  "scope": "/providers/Microsoft.Management/managementGroups/MasolorMG",
+  "notScopes": [],
+  "parameters": {
+   "tagName": {
+    "value": "expiration"
+   },
+   "tagValue": {
+    "value": "01/01/22"
+   }
+  },
+  "metadata": {
+   "assignedBy": "Mariana Solorzano",
+   "parameterScopes": {},
+   "createdBy": "c64e788f-c7dc-40a5-8054-5e88380d4dad",
+   "createdOn": "2021-07-07T21:18:03.5681196Z",
+   "updatedBy": null,
+   "updatedOn": null
+  },
+  "enforcementMode": "Default"
+ },
+ "id": "/providers/Microsoft.Management/managementGroups/MasolorMG/providers/Microsoft.Authorization/policyAssignments/c2e4b5f842764ac7a1cc8456",
+ "type": "Microsoft.Authorization/policyAssignments",
+ "name": "c2e4b5f842764ac7a1cc8456"
+}
