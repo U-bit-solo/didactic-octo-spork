@@ -1,0 +1,25 @@
+{
+ "sku": {
+  "name": "A0",
+  "tier": "Free"
+ },
+ "properties": {
+  "displayName": "Audit tags for subs & RGs",
+  "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/MasolorMG/providers/Microsoft.Authorization/policyDefinitions/0a69d343-c158-45f2-af62-7f0bdb8a630b",
+  "scope": "/providers/Microsoft.Management/managementGroups/MasolorMG",
+  "notScopes": [],
+  "parameters": {},
+  "metadata": {
+   "assignedBy": "Mariana Solorzano",
+   "parameterScopes": {},
+   "createdBy": "c64e788f-c7dc-40a5-8054-5e88380d4dad",
+   "createdOn": "2021-07-22T20:48:39.3528921Z",
+   "updatedBy": null,
+   "updatedOn": null
+  },
+  "enforcementMode": "Default"
+ },
+ "id": "/providers/Microsoft.Management/managementGroups/MasolorMG/providers/Microsoft.Authorization/policyAssignments/44ba5586cc7d4f68b4008f4c",
+ "type": "Microsoft.Authorization/policyAssignments",
+ "name": "44ba5586cc7d4f68b4008f4c"
+}

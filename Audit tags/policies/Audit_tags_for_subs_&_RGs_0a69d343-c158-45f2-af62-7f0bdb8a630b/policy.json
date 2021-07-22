@@ -1,0 +1,51 @@
+{
+ "properties": {
+  "displayName": "Audit tags for subs & RGs",
+  "policyType": "Custom",
+  "mode": "All",
+  "metadata": {
+   "createdBy": "c64e788f-c7dc-40a5-8054-5e88380d4dad",
+   "createdOn": "2021-07-22T20:47:45.1615597Z",
+   "updatedBy": "c64e788f-c7dc-40a5-8054-5e88380d4dad",
+   "updatedOn": "2021-07-22T21:14:08.9031387Z"
+  },
+  "parameters": {
+   "tagName": {
+    "type": "String",
+    "metadata": {
+     "displayName": "Tag Name",
+     "description": "Name of the tag, such as 'AssetId'"
+    },
+    "defaultValue": "AsssetId"
+   }
+  },
+  "policyRule": {
+   "if": {
+    "allOf": [
+     {
+      "field": "[concat('tags[', parameters('tagName'), ']')]",
+      "exists": "false"
+     },
+     {
+      "anyOf": [
+       {
+        "field": "type",
+        "equals": "Microsoft.Resources/subscriptions"
+       },
+       {
+        "field": "type",
+        "equals": "Microsoft.Resources/subscriptions/ResourceGroups"
+       }
+      ]
+     }
+    ]
+   },
+   "then": {
+    "effect": "audit"
+   }
+  }
+ },
+ "id": "/providers/Microsoft.Management/managementGroups/MasolorMG/providers/Microsoft.Authorization/policyDefinitions/0a69d343-c158-45f2-af62-7f0bdb8a630b",
+ "type": "Microsoft.Authorization/policyDefinitions",
+ "name": "0a69d343-c158-45f2-af62-7f0bdb8a630b"
+}
